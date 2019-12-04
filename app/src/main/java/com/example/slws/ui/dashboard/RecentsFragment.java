@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.slws.R;
 
 class RecentsFragment extends Fragment {
+
     private static final String TAG = "Recents";
 
     private PageViewModel pageViewModel;
@@ -38,7 +39,7 @@ class RecentsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        View root = inflater.inflate(R.layout.fragment_main, container, false);
         final TextView textView = root.findViewById(R.id.section_label);
         pageViewModel.getText().observe(this, new Observer<String>() {
             @Override
