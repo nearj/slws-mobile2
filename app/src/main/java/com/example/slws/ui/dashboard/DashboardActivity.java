@@ -3,13 +3,15 @@ package com.example.slws.ui.dashboard;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
+
 import com.example.slws.R;
 import com.google.android.material.tabs.TabLayout;
 
@@ -24,10 +26,22 @@ public class DashboardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_dashboard);
-/*
-        TabsPagerAdapter tabsPagerAdapter = new TabsPagerAdapter(this, getSupportFragmentManager());
 
+        TabsPagerAdapter tabsPagerAdapter = new TabsPagerAdapter(this, getSupportFragmentManager());
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
+        TabLayout.Tab tab = tabLayout.newTab();
+        tabLayout.addTab(tabLayout.newTab().setText("일반 공지"));
+        tabLayout.addTab(tabLayout.newTab().setText("학사 공지"));
+        tabLayout.addTab(tabLayout.newTab().setText("직원 채용"));
+        tabLayout.addTab(tabLayout.newTab().setText("창업 공지"));
+        tabLayout.addTab(tabLayout.newTab().setText("입찰 공고"));
+        tabLayout.addTab(tabLayout.newTab().setText("시설 공사"));
+        tabLayout.addTab(tabLayout.newTab().setText("행사 안내"));
+        tabLayout.addTab(tabLayout.newTab().setText("비교과 교육"));
+        /*
         ViewPager viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(tabsPagerAdapter);
 

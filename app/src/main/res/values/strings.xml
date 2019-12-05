@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">SLWS</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_dashboard">공지사항 목록</string>
     <string name="title_notifications">Notifications</string>
     <string name="hello_blank_fragment">hello</string>
     <string name="tab_text_1">Speed Dial</string>
