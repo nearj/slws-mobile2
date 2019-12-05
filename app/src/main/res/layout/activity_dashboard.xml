@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -27,107 +25,30 @@
                 android:textAlignment="center" />
         </Toolbar>
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/view_pager"
-            android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:visibility="visible"
-            tools:visibility="visible">
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tab_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:visibility="visible"
-                app:tabMode="scrollable"
-                app:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
-                tools:visibility="visible" />
-        </androidx.viewpager.widget.ViewPager>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="visible"
+            app:tabMode="scrollable"
+            app:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+            tools:visibility="visible" />
+
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.core.widget.NestedScrollView
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+    </androidx.viewpager.widget.ViewPager>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Android: Exit/close/hide android Appbar/Toolbar/Actionbar or AppBarLayout along with content/screen scroll"
-                android:textColor="#666" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Android AppBar/Toolbar Tutorial" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Material Design ActionBar/Appbar" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Android AppBar/Toolbar Tutorial" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Material Design ActionBar/Appbar" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Android AppBar/Toolbar Tutorial" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Material Design ActionBar/Appbar" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Android AppBar/Toolbar Tutorial" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Material Design ActionBar/Appbar" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Android AppBar/Toolbar Tutorial" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Material Design ActionBar/Appbar" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Material Design ActionBar/Appbar" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Android AppBar/Toolbar Tutorial" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Material Design ActionBar/Appbar" />
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

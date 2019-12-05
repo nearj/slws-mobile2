@@ -1,9 +1,11 @@
 package com.example.slws.ui.dashboard;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
@@ -11,10 +13,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.slws.R;
 
-class RecentsFragment extends Fragment {
-
-    private static final String TAG = "Recents";
-
+public class RecentsFragment extends Fragment {
     private PageViewModel pageViewModel;
 
     public RecentsFragment() {
@@ -32,7 +31,7 @@ class RecentsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         pageViewModel = ViewModelProviders.of(this).get(PageViewModel.class);
-        pageViewModel.setIndex(TAG);
+        pageViewModel.setIndex("recent");
     }
 
     @Override

@@ -19,13 +19,13 @@
         android:layout_marginTop="8dp"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
-        app:fontFamily="@font/raleway_semibold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="ViewPager Example"
         />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:src="@drawable/ic_call"
-        app:layout_constraintBottom_toTopOf="@+id/section_label"
+        app:layout_constraintBottom_toTopOf="@id/section_label"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         />

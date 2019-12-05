@@ -14,8 +14,6 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.slws.R;
 
 public class ContactsFragment extends Fragment {
-    private static final String TAG = "Contacts";
-
     private PageViewModel pageViewModel;
 
     public ContactsFragment() {
@@ -33,7 +31,7 @@ public class ContactsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         pageViewModel = ViewModelProviders.of(this).get(PageViewModel.class);
-        pageViewModel.setIndex(TAG);
+        pageViewModel.setIndex("contact");
     }
 
     @Override
