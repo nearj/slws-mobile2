@@ -32,7 +32,6 @@ public class DashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
 
         tabLayout = findViewById(R.id.tab_layout);
-        TabLayout.Tab tab = tabLayout.newTab();
         tabLayout.addTab(tabLayout.newTab().setText("일반 공지"));
         tabLayout.addTab(tabLayout.newTab().setText("학사 공지"));
         tabLayout.addTab(tabLayout.newTab().setText("직원 채용"));
