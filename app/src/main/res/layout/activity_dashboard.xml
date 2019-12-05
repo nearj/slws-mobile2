@@ -2,6 +2,7 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
@@ -26,14 +27,23 @@
                 android:textAlignment="center" />
         </Toolbar>
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tab_layout"
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            app:tabMode="scrollable"
-            app:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
-            />
+            android:layout_height="52dp"
+            android:visibility="visible"
+            tools:visibility="visible">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:visibility="visible"
+                app:tabMode="scrollable"
+                app:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+                tools:visibility="visible" />
+        </androidx.viewpager.widget.ViewPager>
 
     </com.google.android.material.appbar.AppBarLayout>
 
