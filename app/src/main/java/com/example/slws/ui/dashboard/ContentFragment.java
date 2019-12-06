@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.slws.R;
+import org.jsoup.Jsoup;
 
 public class ContentFragment extends Fragment {
     private ContentViewModel mViewModel;
