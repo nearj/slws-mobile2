@@ -34,7 +34,14 @@ public class ContentFragment extends Fragment {
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new ContentFragmentAdapter(new String[]{"hi", "bye", "die"});
+        mAdapter = new ContentFragmentAdapter(new String[][]{
+                {"hi", "bye", "die"},
+                {"2.1", "2.2", "2.3"},
+                {"3.1", "3.2", "3.3"},
+                {"4.1", "4.2", "4.3"},
+                {"5.1", "5.2", "5.3"}
+        }
+        );
         mRecyclerView.setAdapter(mAdapter);
         return root;
     }

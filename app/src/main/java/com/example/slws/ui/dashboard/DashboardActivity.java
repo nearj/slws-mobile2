@@ -11,10 +11,6 @@ import com.google.android.material.tabs.TabLayout;
 
 
 public class DashboardActivity extends AppCompatActivity {
-    private ContactsFragment contactsFragment;
-    private RecentsFragment recentsFragment;
-    private SpeedDialFragment speedDialFragment;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -4,9 +4,14 @@
     <string name="title_dashboard">공지사항 목록</string>
     <string name="title_notifications">Notifications</string>
     <string name="hello_blank_fragment">hello</string>
-    <string name="tab_text_1">Speed Dial</string>
-    <string name="tab_text_2">Recents</string>
-    <string name="tab_text_3">Contacts</string>
-
-
+    <string-array name="notice_list">
+        <item>일반공지</item>
+        <item>학사공지</item>
+        <item>직원채용</item>
+        <item>창업공지</item>
+        <item>입찰공고</item>
+        <item>시설공사</item>
+        <item>행사안내</item>
+        <item>비교과교육</item>
+    </string-array>
 </resources>

@@ -15,9 +15,9 @@ import java.util.List;
 
 public class ContentFragmentAdapter
         extends RecyclerView.Adapter<ContentFragmentAdapter.ContentViewHolder> {
-    private String[] mDataset;
+    private String[][] mDataset;
 
-    public ContentFragmentAdapter(String[] dataset) {
+    public ContentFragmentAdapter(String[][] dataset) {
         mDataset = dataset;
     }
 
@@ -32,10 +32,8 @@ public class ContentFragmentAdapter
 
     @Override
     public void onBindViewHolder(@NonNull ContentViewHolder holder, int position) {
-        // TODO: change dataset
-        holder.menuItem.get(0).setText(mDataset[position]);
-        holder.menuItem.get(1).setText(mDataset[position]);
-        holder.menuItem.get(2).setText(mDataset[position]);
+        for (int i = 0; i < mDataset[position].length; i++)
+            holder.menuItem.get(i).setText(mDataset[position][i]);
     }
 
     @Override
@@ -44,7 +42,6 @@ public class ContentFragmentAdapter
     }
 
     public static class ContentViewHolder extends RecyclerView.ViewHolder {
-        public RelativeLayout mRelativeLayout;
         public List<TextView> menuItem = new ArrayList<>();
 
         public ContentViewHolder(RelativeLayout v) {
