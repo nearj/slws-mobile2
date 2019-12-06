@@ -2,7 +2,6 @@ package com.example.slws.Data;
 
 public class Content {
 
-    private String mSender;
     private String mTitle;
     private String mDetails;
     private String mTime;

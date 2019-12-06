@@ -26,7 +26,7 @@ class TabsPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return SpeedDialFragment.newInstance();
+                return ContentFragment.newInstance();
             case 1:
                 return RecentsFragment.newInstance();
             case 2:

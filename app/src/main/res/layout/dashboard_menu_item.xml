@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layout"
     android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/dashboard_menu_item_content"
+        android:id="@+id/dashboard_menu_item_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/dashboard_menu_item_title"
