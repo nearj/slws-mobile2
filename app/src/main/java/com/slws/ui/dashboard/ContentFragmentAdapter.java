@@ -1,4 +1,4 @@
-package com.example.slws.ui.dashboard;
+package com.slws.ui.dashboard;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -20,6 +20,7 @@ public class ContentFragmentAdapter
     public ContentFragmentAdapter(String[][] dataset) {
         mDataset = dataset;
     }
+
 
     @NonNull
     @Override

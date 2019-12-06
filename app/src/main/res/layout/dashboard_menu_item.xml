@@ -5,13 +5,20 @@
     android:layout_height="wrap_content"
     android:padding="10dp">
 
+    <data>
+
+        <variable
+            name="content"
+            type="com.slws.model.Content" />
+    </data>
+
     <TextView
         android:id="@+id/dashboard_menu_item_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:text="title"
+        android:text=""
         android:textSize="16sp"
         android:textStyle="bold" />
 

@@ -1,11 +1,8 @@
-package com.example.slws;
+package com.slws;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-
-import com.example.slws.ui.dashboard.DashboardActivity;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,7 +11,8 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.slws.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.slws.ui.dashboard.DashboardActivity;
 
 public class MainActivity extends AppCompatActivity {
 

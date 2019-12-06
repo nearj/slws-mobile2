@@ -1,4 +1,4 @@
-package com.example.slws.ui.notifications;
+package com.slws.ui.notifications;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

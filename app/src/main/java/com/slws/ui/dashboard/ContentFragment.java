@@ -1,4 +1,4 @@
-package com.example.slws.ui.dashboard;
+package com.slws.ui.dashboard;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,10 +13,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.slws.R;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+
 import java.io.IOException;
 
 public class ContentFragment extends Fragment {
@@ -24,9 +26,7 @@ public class ContentFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private String[] listOfTitles = new String[4];
-    private String url;
-
+    private String[][] mDataset;
 
     public static ContentFragment newInstance() {
         return new ContentFragment();

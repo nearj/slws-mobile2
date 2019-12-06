@@ -1,4 +1,4 @@
-package com.example.slws.ui.keyword;
+package com.slws.ui.keyword;
 
 import androidx.lifecycle.ViewModel;
 

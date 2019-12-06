@@ -1,4 +1,4 @@
-package com.example.slws.ui.dashboard;
+package com.slws.ui.dashboard;
 
 import android.os.Bundle;
 
@@ -25,7 +25,5 @@ public class DashboardActivity extends AppCompatActivity {
 
         TabLayout tabLayout = findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(viewPager);
-
     }
-
 }

@@ -1,4 +1,4 @@
-package com.example.slws.ui.home;
+package com.slws.ui.home;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
