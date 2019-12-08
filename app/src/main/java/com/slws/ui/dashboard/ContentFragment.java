@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.slws.R;
+import com.slws.R;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -32,11 +32,13 @@ public class ContentFragment extends Fragment {
         return new ContentFragment();
     }
 
+    String url;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         String num = "1";
         url = "https://uos.ac.kr/korNotice/list.do?list_id=FA" + num + "&epTicket=LOG";
+
         View root = inflater.inflate(R.layout.dashboard_fragment_recycler, container, false);
         mRecyclerView = root.findViewById(R.id.dashboard_recycler_view);
         mRecyclerView.setHasFixedSize(true);
@@ -55,14 +57,14 @@ public class ContentFragment extends Fragment {
         mRecyclerView.setAdapter(mAdapter);
         return root;
     }
-
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(ContentViewModel.class);
-
     }
-    public void crawling(){
+
+
+    public void crawling() {
         try{
             Document doc = Jsoup.connect(url).get();
             Elements titles = doc.select("div.listType li");

@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.slws.R;
+import com.slws.R;
 
 public class KeywordFragment extends Fragment {
 

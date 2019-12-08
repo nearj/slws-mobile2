@@ -6,8 +6,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.slws.R;
 import com.google.android.material.tabs.TabLayout;
+import com.slws.R;
 
 
 public class DashboardActivity extends AppCompatActivity {
