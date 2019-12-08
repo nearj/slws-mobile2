@@ -9,13 +9,20 @@ public class Content {
     private String mTitle;
     @SerializedName("detail")
     private String mDetails;
-    @SerializedName("time")
-    private String mTime;
+    @SerializedName("date")
+    private String mDate;
+    @SerializedName("departure")
+    private String mDeparture;
+    @SerializedName("numOfURL")
+    private String mNumOfURL;
 
-    public Content(String mTitle, String mDetails, String mTime) {
+
+    public Content(String mTitle, String mDetails, String mDate, String mDeparture, String mNumOfURL) {
         this.mTitle = mTitle;
         this.mDetails = mDetails;
-        this.mTime = mTime;
+        this.mDate = mDate;
+        this.mDeparture = mDeparture;
+        this.mNumOfURL = mNumOfURL;
     }
 
     public String getmTitle() {
@@ -34,11 +41,25 @@ public class Content {
         this.mDetails = mDetails;
     }
 
-    public String getmTime() {
-        return mTime;
+    public String getmDate() {
+        return mDate;
     }
 
-    public void setmTime(String mTime) {
-        this.mTime = mTime;
+    public void setmDate(String mDate) {
+        this.mDate = mDate;
+    }
+
+    public String getmDeparture() {
+        return mDeparture;
+    }
+
+    public void setmDeparture(String mDeparture) { this.mDeparture = mDeparture; }
+
+    public String getmNumOfURL() {
+        return mNumOfURL;
+    }
+
+    public void setmNumOfURL(String mNumOfURL) {
+        this.mNumOfURL = mNumOfURL;
     }
 }
