@@ -8,7 +8,7 @@ import com.slws.R;
 import com.slws.ui.home.HtmlParser;
 
 
-public class HomeViewModel extends ViewModel implements ParserResponseInterface{
+public class HomeViewModel extends ViewModel /*implements ParserResponseInterface*/{
 
     private MutableLiveData<String> mText;
 
@@ -17,11 +17,12 @@ public class HomeViewModel extends ViewModel implements ParserResponseInterface{
         mText = new MutableLiveData<>();
         mText.setValue("This is home fragment");
     }
+    /*
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
     }
-
+*/
     public LiveData<String> getText() {
         return mText;
     }
