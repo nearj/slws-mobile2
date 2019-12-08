@@ -2,6 +2,7 @@ package com.slws.ui.dashboard;
 
 import android.content.Context;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -17,6 +18,19 @@ class TabsPagerAdapter extends FragmentPagerAdapter {
     public TabsPagerAdapter(Context context, FragmentManager fm) {
         super(fm);
         mContext = context;
+    }
+
+
+    @Override
+    public int getItemPosition(@NonNull Object object) {
+
+        /*
+        if (object instanceof  UpdateableFragment) {
+            (Update)
+        }
+         */
+
+        return super.getItemPosition(object);
     }
 
     @Override
