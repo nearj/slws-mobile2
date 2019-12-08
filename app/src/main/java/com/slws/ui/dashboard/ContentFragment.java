@@ -7,12 +7,15 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ObservableArrayList;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.slws.R;
+import com.slws.databinding.DashboardFragmentRecyclerBinding;
+import com.slws.model.Content;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -27,6 +30,7 @@ public class ContentFragment extends Fragment {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private String[][] mDataset;
+    private ObservableArrayList<Content> contentList;
 
     public static ContentFragment newInstance() {
         return new ContentFragment();
@@ -36,33 +40,47 @@ public class ContentFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+        DashboardFragmentRecyclerBinding binding =
+                DataBindingUtil.inflate(inflater, R.layout.dashboard_fragment_recycler, container, false);
+        View root = binding.getRoot();
+
         String num = "1";
         url = "https://uos.ac.kr/korNotice/list.do?list_id=FA" + num + "&epTicket=LOG";
-
-        View root = inflater.inflate(R.layout.dashboard_fragment_recycler, container, false);
+/*
         mRecyclerView = root.findViewById(R.id.dashboard_recycler_view);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
-        crawling();
-        mAdapter = new ContentFragmentAdapter(new String[][]{
-                {"hi", "bye", "die"},
-                {"2.1", "2.2", "2.3"},
-                {"3.1", "3.2", "3.3"},
-                {"4.1", "4.2", "4.3"},
-                {"5.1", "5.2", "5.3"},
-                //{listOfTitles[0], listOfTitles[1], listOfTitles[2]}
-        }
-        );
-        mRecyclerView.setAdapter(mAdapter);
+ */
+
+        //crawling();
+        mAdapter = new ContentFragmentAdapter();
+        contentList = new ObservableArrayList<>();
+        binding.dashboardRecyclerView.setHasFixedSize(true);
+        binding.dashboardRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        binding.setContentList(this.contentList);
+        binding.dashboardRecyclerView.setAdapter(mAdapter);
+
+        doDummy();
+
         return root;
     }
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(ContentViewModel.class);
+//        mViewModel = ViewModelProviders.of(this).get(ContentViewModel.class);
     }
 
+    private void doDummy() {
+        contentList.add(new Content("a", "b", "c", "d", "e"));
+        contentList.add(new Content("a1", "b2", "c3", "d4", "e5"));
+        contentList.add(new Content("a", "b", "c", "d", "e"));
+        contentList.add(new Content("a", "b", "c", "d", "e"));
+        contentList.add(new Content("a", "b", "c", "d", "e"));
+        contentList.add(new Content("a", "b", "c", "d", "e"));
+        contentList.add(new Content("a", "b", "c", "d", "e"));
+        contentList.add(new Content("a", "b", "c", "d", "e"));
+    }
 
     public void crawling() {
         try{

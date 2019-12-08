@@ -29,7 +29,6 @@ class TabsPagerAdapter extends FragmentPagerAdapter {
             (Update)
         }
          */
-
         return super.getItemPosition(object);
     }
 

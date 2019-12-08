@@ -2,13 +2,12 @@ package com.slws.ui.dashboard;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.slws.R;
+import com.slws.databinding.DashboardMenuItemBinding;
+import com.slws.model.Content;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,40 +15,54 @@ import java.util.List;
 public class ContentFragmentAdapter
         extends RecyclerView.Adapter<ContentFragmentAdapter.ContentViewHolder> {
     private String[][] mDataset;
+    private List<Content> mContentList;
 
     public ContentFragmentAdapter(String[][] dataset) {
         mDataset = dataset;
     }
 
+    public ContentFragmentAdapter() {
+        this.mContentList = new ArrayList<>();
+    }
 
     @NonNull
     @Override
     public ContentFragmentAdapter.ContentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        RelativeLayout v = (RelativeLayout) LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.dashboard_menu_item, parent, false);
-        ContentViewHolder vh = new ContentViewHolder(v);
-        return vh;
+        DashboardMenuItemBinding binding = DashboardMenuItemBinding.inflate(
+                LayoutInflater.from(parent.getContext()), parent, false);
+
+        return new ContentViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ContentViewHolder holder, int position) {
-        for (int i = 0; i < mDataset[position].length; i++)
-            holder.menuItem.get(i).setText(mDataset[position][i]);
+        Content content = mContentList.get(position);
+        holder.bind(content);
+    }
+
+    public void setItem(List<Content> contentList) {
+        if (contentList == null) {
+            return;
+        }
+        this.mContentList = contentList;
+        notifyDataSetChanged();
     }
 
     @Override
     public int getItemCount() {
-        return mDataset.length;
+        return mContentList.size();
     }
 
     public static class ContentViewHolder extends RecyclerView.ViewHolder {
-        public List<TextView> menuItem = new ArrayList<>();
+        private final DashboardMenuItemBinding binding;
 
-        public ContentViewHolder(RelativeLayout v) {
-            super(v);
-            menuItem.add(v.findViewById(R.id.dashboard_menu_item_title));
-            menuItem.add(v.findViewById(R.id.dashboard_menu_item_detail));
-            menuItem.add(v.findViewById(R.id.dashboard_menu_item_date));
+        public ContentViewHolder(DashboardMenuItemBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
+        }
+
+        void bind(Content content) {
+            binding.setContent(content);
         }
     }
 }

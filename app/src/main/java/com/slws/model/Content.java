@@ -6,15 +6,15 @@ public class Content {
 
 
     @SerializedName("title")
-    private String mTitle;
+    public String mTitle;
     @SerializedName("detail")
-    private String mDetails;
-    @SerializedName("date")
-    private String mDate;
+    public String mDetails;
+    @SerializedName("time")
+    public String mDate;
     @SerializedName("departure")
-    private String mDeparture;
+    public String mDeparture;
     @SerializedName("numOfURL")
-    private String mNumOfURL;
+    public String mNumOfURL;
 
 
     public Content(String mTitle, String mDetails, String mDate, String mDeparture, String mNumOfURL) {
