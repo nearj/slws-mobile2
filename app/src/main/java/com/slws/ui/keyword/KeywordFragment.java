@@ -35,8 +35,10 @@ public class KeywordFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
         FragmentKeywordRecyclerBinding binding =
-                DataBindingUtil.inflate(inflater, R.layout.fragment_keyword, container, false);
+                DataBindingUtil.inflate(inflater, R.layout.fragment_keyword_recycler, container, false);
         View root = binding.getRoot();
+                //inflater.inflate(R.layout.fragment_keyword, container, false);
+                //binding.getRoot();
 
         mRecyclerView = root.findViewById(R.id.keyword_recycler_view);
         mRecyclerView.setHasFixedSize(true);
