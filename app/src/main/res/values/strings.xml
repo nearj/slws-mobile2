@@ -14,7 +14,8 @@
     <string name="notice_facility">시설공사</string>
     <string name="notice_event">행사안내</string>
     <string name="notice_nonsubject">비교과교육</string>
-    <string name="add_button">등록하</string>
+    <string name="add_button">등록하기</string>
+    <string name="finish_add_notice_list">관심 공지사항 목록이 등록되었습니다.</string>
 
     <string-array name="notice_list">
         <item>일반공지</item>

@@ -17,7 +17,8 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:text="@string/notice_normal"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:checked="true" />
 
     <CheckBox
         android:id="@+id/checkBox2"
@@ -26,7 +27,8 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:text="@string/notice_scholar"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:checked="true"  />
 
     <CheckBox
         android:id="@+id/checkBox3"
@@ -35,7 +37,8 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:text="@string/notice_hire"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:checked="true" />
 
     <CheckBox
         android:id="@+id/checkBox4"
@@ -44,7 +47,8 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:text="@string/notice_establish"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:checked="true" />
 
     <CheckBox
         android:id="@+id/checkBox5"
@@ -53,7 +57,8 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:text="@string/notice_bidding"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:checked="true" />
 
     <CheckBox
         android:id="@+id/checkBox6"
@@ -62,7 +67,8 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:text="@string/notice_facility"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:checked="true" />
 
     <CheckBox
         android:id="@+id/checkBox7"
@@ -71,7 +77,8 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:text="@string/notice_event"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:checked="true" />
 
     <CheckBox
         android:id="@+id/checkBox8"
@@ -80,7 +87,8 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:text="@string/notice_nonsubject"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:checked="true" />
 
     <LinearLayout
         android:layout_width="match_parent"
