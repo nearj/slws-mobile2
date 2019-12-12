@@ -54,7 +54,7 @@ public class KeywordFragment extends Fragment {
         binding.setKeywordList(this.keywordList);
         binding.keywordRecyclerView.setAdapter(mAdapter);
 
-
+        doDummy();
         return root;
     }
 
@@ -64,5 +64,7 @@ public class KeywordFragment extends Fragment {
        // mViewModel = ViewModelProviders.of(this).get(KeywordViewModel.class);
         // TODO: Use the ViewModel
     }
-
+    private void doDummy(){
+        keywordList.add(new Keyword("공지사항"));
+    }
 }
