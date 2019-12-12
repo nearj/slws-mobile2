@@ -43,7 +43,8 @@ public class KeywordFragmentTest extends Fragment {
                 count = adapter.getCount();
 
                 // 아이템 추가.
-                items.add("LIST" + (count + 1));
+                //items.add("LIST" + (count + 1));
+                items.add("MODIFY 버튼을 눌러 수정해주세요");
 
                 // listview 갱신
                 adapter.notifyDataSetChanged();

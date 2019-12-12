@@ -5,6 +5,17 @@
     <string name="title_notifications">Notifications</string>
     <string name="hello_blank_fragment">hello</string>
     <string name="title_keyword">키워드</string>
+    <string name="checkbox">CheckBox</string>
+    <string name="notice_normal">일반공지</string>
+    <string name="notice_scholar">학사공지</string>
+    <string name="notice_hire">직원채용</string>
+    <string name="notice_establish">창업공지</string>
+    <string name="notice_bidding">입찰공고</string>
+    <string name="notice_facility">시설공사</string>
+    <string name="notice_event">행사안내</string>
+    <string name="notice_nonsubject">비교과교육</string>
+
+
     <string-array name="notice_list">
         <item>일반공지</item>
         <item>학사공지</item>
