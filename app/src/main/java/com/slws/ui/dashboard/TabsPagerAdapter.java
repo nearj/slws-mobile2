@@ -20,7 +20,6 @@ class TabsPagerAdapter extends FragmentPagerAdapter {
         mContext = context;
     }
 
-
     @Override
     public int getItemPosition(@NonNull Object object) {
 

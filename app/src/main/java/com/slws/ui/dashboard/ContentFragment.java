@@ -68,7 +68,9 @@ public class ContentFragment extends Fragment {
     }
 
     private void doDummy() {
-        contentList.add(new Content("a", "b", "c", "d", "e"));
+        contentList.add(new Content("현직 동문 선배와의 진로 토크 \"서울시립대학교 동문 휴먼라이브러리\" 참가 신청 접수",
+                "2019년 서울시립대학교 동문 휴먼라이브러리 행사 신청 안내 ...", "12/06",
+                "학생과", "asdf"));
         contentList.add(new Content("a1", "b2", "c3", "d4", "e5"));
         contentList.add(new Content("a", "b", "c", "d", "e"));
         contentList.add(new Content("a", "b", "c", "d", "e"));

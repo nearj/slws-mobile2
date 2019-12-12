@@ -1,5 +1,6 @@
 package com.slws.ui.dashboard;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -30,7 +31,6 @@ public class ContentFragmentAdapter
     public ContentFragmentAdapter.ContentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         DashboardMenuItemBinding binding = DashboardMenuItemBinding.inflate(
                 LayoutInflater.from(parent.getContext()), parent, false);
-
         return new ContentViewHolder(binding);
     }
 
@@ -63,6 +63,7 @@ public class ContentFragmentAdapter
 
         void bind(Content content) {
             binding.setContent(content);
+            binding.layout.setBackgroundColor(Color.MAGENTA);
         }
     }
 }
