@@ -1,40 +1,50 @@
 package com.slws.ui.keyword;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
-import java.util.ArrayList;
 import com.slws.R;
 
-public class KeywordFragmentTest extends FragmentActivity {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+import java.util.ArrayList;
 
-        super.onCreate(savedInstanceState);
-        // 빈 데이터 리스트 생성.
+public class KeywordFragmentTest extends Fragment {
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.fragment_keyword_recycler, container, false);
+        return super.onCreateView(inflater, container, savedInstanceState);
         final ArrayList<String> items = new ArrayList<String>() ;
         // ArrayAdapter 생성. 아이템 View를 선택(single choice)가능하도록 만듦.
         final ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_single_choice, items) ;
 
+
         // listview 생성 및 adapter 지정.
-        final ListView listview = (ListView) findViewById(R.id.listview1) ;
+        final ListView listview = root.findViewById(R.id.listview1);
         listview.setAdapter(adapter) ;
 
         // add button에 대한 이벤트 처리.
-        Button addButton = (Button)findViewById(R.id.add) ;
+        Button addButton = root.findViewById(R.id.add);
         addButton.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
                 int count;
                 count = adapter.getCount();
 
                 // 아이템 추가.
-                items.add("LIST" + Integer.toString(count + 1));
+                items.add("LIST" + (count + 1));
 
                 // listview 갱신
                 adapter.notifyDataSetChanged();
@@ -42,7 +52,7 @@ public class KeywordFragmentTest extends FragmentActivity {
         }) ;
 
         // modify button에 대한 이벤트 처리.
-        Button modifyButton = (Button)findViewById(R.id.modify) ;
+        Button modifyButton = root.findViewById(R.id.modify);
         modifyButton.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
                 int count, checked ;
@@ -53,7 +63,7 @@ public class KeywordFragmentTest extends FragmentActivity {
                     checked = listview.getCheckedItemPosition();
                     if (checked > -1 && checked < count) {
                         // 아이템 수정
-                        items.set(checked, Integer.toString(checked+1) + "번 아이템 수정") ;
+                        items.set(checked, (checked + 1) + "번 아이템 수정");
 
                         // listview 갱신
                         adapter.notifyDataSetChanged();
@@ -63,7 +73,7 @@ public class KeywordFragmentTest extends FragmentActivity {
         }) ;
 
         // delete button에 대한 이벤트 처리.
-        Button deleteButton = (Button)findViewById(R.id.delete) ;
+        Button deleteButton = root.findViewById(R.id.delete);
         deleteButton.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
                 int count, checked ;
@@ -85,6 +95,7 @@ public class KeywordFragmentTest extends FragmentActivity {
                     }
                 }
             }
-        }) ;
+        });
     }
+
 }
