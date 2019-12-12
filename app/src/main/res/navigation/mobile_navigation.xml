@@ -16,7 +16,11 @@
         android:name="com.slws.ui.dashboard.DashboardActivity"
         android:label="@string/title_dashboard"
         tools:layout="@layout/activity_dashboard" />
-
+    <fragment
+        android:id="@+id/navigation_keyword"
+        android:name="com.slws.ui.keyword.KeywordFragment"
+        android:label="키워드 등록"
+        tools:layout="@layout/fragment_keyword" />
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.slws.ui.notifications.NotificationsFragment"
