@@ -98,5 +98,4 @@ public class KeywordFragmentTest extends Fragment {
         });
         return root;
     }
-
 }

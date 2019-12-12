@@ -18,9 +18,9 @@
         tools:layout="@layout/activity_dashboard" />
     <fragment
         android:id="@+id/navigation_keyword"
-        android:name="com.slws.ui.keyword.KeywordFragmentTest"
+        android:name="com.slws.ui.keyword.KeywordFragmentNew"
         android:label="키워드 등록"
-        tools:layout="@layout/fragment_keyword_test" />
+        tools:layout="@layout/fragment_keyword_new" />
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.slws.ui.notifications.NotificationsFragment"
