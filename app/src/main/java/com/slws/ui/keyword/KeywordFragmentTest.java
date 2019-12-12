@@ -27,10 +27,9 @@ public class KeywordFragmentTest extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_keyword_test, container, false);
         //return super.onCreateView(inflater, container, savedInstanceState);
-        final ArrayList<String> items = new ArrayList<String>() ;
+        final ArrayList<String> items = new ArrayList<>();
         // ArrayAdapter 생성. 아이템 View를 선택(single choice)가능하도록 만듦.
-        final ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_single_choice, items) ;
-
+        final ArrayAdapter adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_single_choice, items);
 
         // listview 생성 및 adapter 지정.
         final ListView listview = root.findViewById(R.id.listview1);
@@ -96,7 +95,7 @@ public class KeywordFragmentTest extends Fragment {
                 }
             }
         });
-        return super.onCreateView(inflater, container, savedInstanceState);
+        return root;
     }
 
 }
