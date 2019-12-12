@@ -12,7 +12,7 @@
         android:title="@string/title_dashboard" />
     <item
         android:id="@+id/navigation_keyword"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/ic_keyword_search"
         android:title="키워드 등록" />
 
     <item
