@@ -7,14 +7,21 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.ObservableArrayList;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.slws.R;
+import com.slws.model.Keyword;
 
 public class KeywordFragment extends Fragment {
 
     private KeywordViewModel mViewModel;
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+    private ObservableArrayList<Keyword> contentList;
 
     public static KeywordFragment newInstance() {
         return new KeywordFragment();

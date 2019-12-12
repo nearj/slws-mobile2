@@ -3,14 +3,12 @@ import android.widget.Button;
 
 import com.google.gson.annotations.SerializedName;
 
-public class listContent {
+public class Keyword {
     @SerializedName("text")
     public String mText;
-    //@SerializedName("deleteButton");
-    public Button mDeleteButton;
-    public listContent(String mText, Button mDeleteButton){
+
+    public Keyword(String mText){
         this.mText = mText;
-        this.mDeleteButton = mDeleteButton;
     }
     public String getmText() {
         return mText;

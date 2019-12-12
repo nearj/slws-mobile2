@@ -36,7 +36,6 @@ public class ContentFragment extends Fragment {
         return new ContentFragment();
     }
 
-    String url;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -44,14 +43,11 @@ public class ContentFragment extends Fragment {
                 DataBindingUtil.inflate(inflater, R.layout.dashboard_fragment_recycler, container, false);
         View root = binding.getRoot();
 
-        String num = "1";
-        url = "https://uos.ac.kr/korNotice/list.do?list_id=FA" + num + "&epTicket=LOG";
-/*
         mRecyclerView = root.findViewById(R.id.dashboard_recycler_view);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
- */
+
 
         //crawling();
         mAdapter = new ContentFragmentAdapter();
@@ -80,20 +76,5 @@ public class ContentFragment extends Fragment {
         contentList.add(new Content("a", "b", "c", "d", "e"));
         contentList.add(new Content("a", "b", "c", "d", "e"));
         contentList.add(new Content("a", "b", "c", "d", "e"));
-    }
-
-    public void crawling() {
-        try{
-            Document doc = Jsoup.connect(url).get();
-            Elements titles = doc.select("div.listType li");
-            int i = 0;
-            for(Element e: titles){
-                //System.out.println("Hello world");
-                //System.out.println("title:"+e.text());
-                //listOfTitles[i++] = e.text();
-            }
-        }catch(IOException e){
-            e.printStackTrace();
-        }
     }
 }
