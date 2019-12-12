@@ -8,7 +8,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.slws.databinding.KeywordMenuItemBinding;
-import com.slws.databinding.KeywordMenuItemBinding;
 import com.slws.model.Keyword;
 
 import java.util.ArrayList;
@@ -16,12 +15,7 @@ import java.util.List;
 
 public class KeywordFragmentAdapter
         extends RecyclerView.Adapter<KeywordFragmentAdapter.KeywordViewHolder> {
-    private String[][] mDataset;
     private List<Keyword> mKeywordList;
-
-    public KeywordFragmentAdapter(String[][] dataset) {
-        mDataset = dataset;
-    }
 
     public KeywordFragmentAdapter() {
         this.mKeywordList = new ArrayList<>();
