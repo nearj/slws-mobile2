@@ -24,7 +24,7 @@ public class HomeViewModel extends ViewModel /*implements ParserResponseInterfac
 
     public HomeViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue(" ");
     }
 
     /*
