@@ -93,7 +93,7 @@ public class KeywordFragmentNew extends Fragment{
 
                 Toast.makeText(getActivity(),
                         str + "의 키워드가 등록되었습니다!",
-                        Toast.LENGTH_LONG).show();
+                        Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -113,7 +113,7 @@ public class KeywordFragmentNew extends Fragment{
                 listView.clearChoices();
                 Toast.makeText(getActivity(),
                         str + "의 키워드가 삭제되었습니다!",
-                        Toast.LENGTH_LONG).show();
+                        Toast.LENGTH_SHORT).show();
             }
         });
         return root;

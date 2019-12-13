@@ -44,7 +44,7 @@ public class FavoriteFragment extends Fragment {
                 //완료되었습니다
                 Toast.makeText(getActivity(),
                         "관심 공지사항 목록이 설정되었습니다!",
-                        Toast.LENGTH_LONG).show();
+                        Toast.LENGTH_SHORT).show();
             }
         });
 
