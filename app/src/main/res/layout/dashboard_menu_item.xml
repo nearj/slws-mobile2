@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
@@ -9,7 +9,7 @@
             type="com.slws.model.Content" />
     </data>
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout
         android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,6 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
+            android:paddingRight="45dp"
             android:text="@{content.mTitle}"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -35,6 +36,7 @@
             android:layout_marginTop="5dp"
             android:ellipsize="end"
             android:maxLines="1"
+            android:paddingRight="45dp"
             android:text="@{content.mDetails}" />
 
         <TextView
