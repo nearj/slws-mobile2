@@ -68,13 +68,9 @@ public class KeywordFragmentNew extends Fragment{
             ){
                 //ArrayList에서 position에 해당하는 데이터 얻어오기
                 String item=list.get(position);
-                //토스트로  출력하기
-                /*
-                Toast.makeText(KeywordFragmentNew.this,
-                        "선택항목:"+item,
-                        Toast.LENGTH_SHORT).show();\
 
-                 */
+
+
             }
         });
 
@@ -93,6 +89,12 @@ public class KeywordFragmentNew extends Fragment{
                 adapter.notifyDataSetChanged();
                 //입력된 값 지우기
                 edt.setText("");
+                //토스트로  출력하기
+
+                Toast.makeText(getActivity(),
+                        str + "의 키워드가 등록되었습니다!",
+                        Toast.LENGTH_LONG).show();
+
             }
         });
 
@@ -102,12 +104,16 @@ public class KeywordFragmentNew extends Fragment{
             public void onClick(View v) {
                 //선택된 항목의 인덱스 얻어오기
                 int pos=listView.getCheckedItemPosition();
+                String str = list.get(pos);
                 //ArrayList에서 항목 지우기
                 list.remove(pos);
                 //어댑터에 항목이 바뀜을 알리기
                 adapter.notifyDataSetChanged();
                 //선택한 항목표시 없애기
                 listView.clearChoices();
+                Toast.makeText(getActivity(),
+                        str + "의 키워드가 삭제되었습니다!",
+                        Toast.LENGTH_LONG).show();
             }
         });
         return root;

@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -41,7 +42,9 @@ public class FavoriteFragment extends Fragment {
             @Override
             public void onClick(View v){
                 //완료되었습니다
-
+                Toast.makeText(getActivity(),
+                        "관심 공지사항 목록이 설정되었습니다!",
+                        Toast.LENGTH_LONG).show();
             }
         });
 
