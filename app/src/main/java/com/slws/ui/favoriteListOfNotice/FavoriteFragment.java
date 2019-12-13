@@ -44,13 +44,14 @@ public class FavoriteFragment extends Fragment {
 
             }
         });
+
         checkBox1.setOnClickListener(new CheckBox.OnClickListener(){
             @Override
             public void onClick(View v){
                 if(((CheckBox)v).isChecked()){
-                    checkBox1.setChecked(false);
-                }else{
                     checkBox1.setChecked(true);
+                }else{
+                    checkBox1.setChecked(false);
                 }
             }
         });
@@ -58,9 +59,9 @@ public class FavoriteFragment extends Fragment {
             @Override
             public void onClick(View v){
                 if(((CheckBox)v).isChecked()){
-                    checkBox2.setChecked(false);
-                }else{
                     checkBox2.setChecked(true);
+                }else{
+                    checkBox2.setChecked(false);
                 }
             }
         });
@@ -68,9 +69,9 @@ public class FavoriteFragment extends Fragment {
             @Override
             public void onClick(View v){
                 if(((CheckBox)v).isChecked()){
-                    checkBox3.setChecked(false);
-                }else{
                     checkBox3.setChecked(true);
+                }else{
+                    checkBox3.setChecked(false);
                 }
             }
         });
@@ -78,9 +79,9 @@ public class FavoriteFragment extends Fragment {
             @Override
             public void onClick(View v){
                 if(((CheckBox)v).isChecked()){
-                    checkBox4.setChecked(false);
-                }else{
                     checkBox4.setChecked(true);
+                }else{
+                    checkBox4.setChecked(false);
                 }
             }
         });
@@ -88,9 +89,9 @@ public class FavoriteFragment extends Fragment {
             @Override
             public void onClick(View v){
                 if(((CheckBox)v).isChecked()){
-                    checkBox5.setChecked(false);
-                }else{
                     checkBox5.setChecked(true);
+                }else{
+                    checkBox5.setChecked(false);
                 }
             }
         });
@@ -98,9 +99,9 @@ public class FavoriteFragment extends Fragment {
             @Override
             public void onClick(View v){
                 if(((CheckBox)v).isChecked()){
-                    checkBox6.setChecked(false);
-                }else{
                     checkBox6.setChecked(true);
+                }else{
+                    checkBox6.setChecked(false);
                 }
             }
         });
@@ -108,9 +109,9 @@ public class FavoriteFragment extends Fragment {
             @Override
             public void onClick(View v){
                 if(((CheckBox)v).isChecked()){
-                    checkBox7.setChecked(false);
-                }else{
                     checkBox7.setChecked(true);
+                }else{
+                    checkBox7.setChecked(false);
                 }
             }
         });
@@ -118,9 +119,9 @@ public class FavoriteFragment extends Fragment {
             @Override
             public void onClick(View v){
                 if(((CheckBox)v).isChecked()){
-                    checkBox8.setChecked(false);
-                }else{
                     checkBox8.setChecked(true);
+                }else{
+                    checkBox8.setChecked(false);
                 }
             }
         });

@@ -63,7 +63,7 @@ public class ContentFragmentAdapter
 
         void bind(Content content) {
             binding.setContent(content);
-            binding.layout.setBackgroundColor(Color.MAGENTA);
+            binding.layout.setBackgroundColor(Color.WHITE);
         }
     }
 }
