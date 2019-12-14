@@ -11,9 +11,9 @@ public class Content {
     public String mDate;
     @SerializedName("departure")
     public String mDeparture;
-    @SerializedName("numOfURL")
+    @SerializedName("author")
     public String mAuthor;
-
+    public boolean mInterest;
 
     /**
      * @param title     title
@@ -68,5 +68,13 @@ public class Content {
 
     public void setAuthor(String author) {
         this.mAuthor = author;
+    }
+
+    public boolean getInterest() {
+        return this.mInterest;
+    }
+
+    public void setInterest(boolean mInterest) {
+        this.mInterest = mInterest;
     }
 }

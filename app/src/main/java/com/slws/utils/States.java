@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 
 public enum States {
     KEYWORD("keyword"),
-    INTEREST("interest");
+    INTEREST("mInterest");
     private final String name;
 
     States(String s) {

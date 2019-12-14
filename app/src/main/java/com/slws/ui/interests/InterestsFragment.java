@@ -7,29 +7,38 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 
 import com.slws.R;
+import com.slws.data.AppDataManager;
+import com.slws.databinding.FragmentInterestsBinding;
+import com.slws.model.Content;
+import com.slws.utils.BoardTitle;
 
 public class InterestsFragment extends Fragment {
-
+    Content c;
+    TextView textView;
     private InterestsViewModel interestsViewModel;
+    AppDataManager appDataManager = new AppDataManager();
+
+//    private void setText() {
+//        new Test(BoardTitle.일반공지).execute(21745);
+//    }
+//
+//    private void process(String s) {
+//
+//    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        interestsViewModel =
-                ViewModelProviders.of(this).get(InterestsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_interests, container, false);
-        final TextView textView = root.findViewById(R.id.text_notifications);
-        interestsViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
+        FragmentInterestsBinding binding =
+                DataBindingUtil.inflate(inflater, R.layout.fragment_interests, container, false);
+        Content content = appDataManager.getContents(BoardTitle.일반공지, 21745).get(0);
+        binding.setTestA(content);
+        View root = binding.getRoot();
+
         return root;
     }
 }
