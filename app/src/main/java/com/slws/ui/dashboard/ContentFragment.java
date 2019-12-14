@@ -53,8 +53,6 @@ public class ContentFragment extends Fragment {
         binding.setContentList(this.contentList);
         binding.dashboardRecyclerView.setAdapter(mAdapter);
 
-        doDummy();
-
         return root;
     }
     @Override
@@ -63,15 +61,5 @@ public class ContentFragment extends Fragment {
 //        mViewModel = ViewModelProviders.of(this).get(ContentViewModel.class);
     }
 
-    private void doDummy() {
-        contentList.add(appDataManager.getContents(BoardTitle.일반공지, 21745).get(0));
-        contentList.add(appDataManager.getContents(BoardTitle.일반공지, 21744).get(0));
-        contentList.add(appDataManager.getContents(BoardTitle.일반공지, 21743).get(0));
-        contentList.add(appDataManager.getContents(BoardTitle.일반공지, 21742).get(0));
-        contentList.add(appDataManager.getContents(BoardTitle.일반공지, 21741).get(0));
-        contentList.add(appDataManager.getContents(BoardTitle.일반공지, 21740).get(0));
-        contentList.add(appDataManager.getContents(BoardTitle.일반공지, 21739).get(0));
 
-
-    }
 }
