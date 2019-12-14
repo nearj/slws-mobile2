@@ -14,11 +14,13 @@ public enum BoardTitle {
     비교과교육("비교과교육", "https://uos.ac.kr/korNotice/view.do?list_id=ED3&seq=");
 
     private final String mName, mURL;
+    public final static int size = 8;
 
     BoardTitle(String name, String url) {
         mName = name;
         mURL = url;
     }
+
 
     @NonNull
     @Override

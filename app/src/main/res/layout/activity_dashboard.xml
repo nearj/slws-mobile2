@@ -39,7 +39,6 @@
                     android:textAlignment="center" />
             </Toolbar>
 
-
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab_layout"
                 android:layout_width="match_parent"
@@ -49,8 +48,6 @@
                 app:tabMode="scrollable"
                 app:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
                 tools:visibility="visible" />
-
-
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.viewpager.widget.ViewPager
@@ -60,6 +57,5 @@
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         </androidx.viewpager.widget.ViewPager>
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

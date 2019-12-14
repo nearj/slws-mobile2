@@ -47,7 +47,7 @@ public class KeywordFragment extends Fragment {
 
         btnAdd.setOnClickListener((View v) -> {
             curString = editText.getText().toString();
-            if (viewModel.itemListContatins(curString)) {
+            if (viewModel.itemListContains(curString)) {
                 Toast.makeText(getActivity(),
                         curString + "는 이미 등록된 키워드입니다.", Toast.LENGTH_SHORT).show();
             } else if (!curString.equals("")) {
