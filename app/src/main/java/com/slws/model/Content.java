@@ -13,7 +13,7 @@ public class Content {
     public String mDeparture;
     @SerializedName("author")
     public String mAuthor;
-    public boolean mInterest;
+    public boolean mInterest, mDone;
 
     /**
      * @param title     title
@@ -70,11 +70,19 @@ public class Content {
         this.mAuthor = author;
     }
 
-    public boolean getInterest() {
+    public boolean inInterest() {
         return this.mInterest;
     }
 
     public void setInterest(boolean mInterest) {
         this.mInterest = mInterest;
+    }
+
+    public boolean isDone() {
+        return this.mDone;
+    }
+
+    public void setDone(boolean done) {
+        this.mDone = done;
     }
 }
