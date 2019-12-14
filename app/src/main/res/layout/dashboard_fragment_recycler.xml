@@ -4,11 +4,8 @@
     xmlns:bind="http://schemas.android.com/tools">
 
     <data>
-
         <import type="androidx.databinding.ObservableArrayList" />
-
         <import type="com.slws.model.Content" />
-
         <variable
             name="contentList"
             type="ObservableArrayList&lt;Content&gt;" />

@@ -6,7 +6,7 @@
 
         <variable
             name="keyword"
-            type="com.slws.model.Keyword" />
+            type="com.slws.data.model.Keyword" />
     </data>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"

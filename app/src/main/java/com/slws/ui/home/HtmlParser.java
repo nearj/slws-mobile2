@@ -1,14 +1,12 @@
 package com.slws.ui.home;
 
 import android.os.AsyncTask;
-import android.provider.DocumentsContract;
 
 import com.slws.model.Content;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.parser.Parser;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;

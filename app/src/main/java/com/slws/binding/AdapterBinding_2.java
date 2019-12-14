@@ -5,7 +5,6 @@ import androidx.databinding.ObservableArrayList;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.slws.model.Keyword;
-import com.slws.ui.dashboard.ContentFragmentAdapter;
 import com.slws.ui.keyword.KeywordFragmentAdapter;
 
 public class AdapterBinding_2 {

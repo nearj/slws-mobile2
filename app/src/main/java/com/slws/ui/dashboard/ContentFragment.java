@@ -17,13 +17,6 @@ import com.slws.R;
 import com.slws.databinding.DashboardFragmentRecyclerBinding;
 import com.slws.model.Content;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
-import java.io.IOException;
-
 public class ContentFragment extends Fragment {
     private ContentViewModel mViewModel;
     private RecyclerView mRecyclerView;

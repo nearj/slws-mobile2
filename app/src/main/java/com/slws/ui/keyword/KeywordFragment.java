@@ -10,14 +10,12 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ObservableArrayList;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.slws.R;
 import com.slws.databinding.FragmentKeywordRecyclerBinding;
 import com.slws.model.Keyword;
-import com.slws.ui.dashboard.ContentFragmentAdapter;
 
 public class KeywordFragment extends Fragment {
 

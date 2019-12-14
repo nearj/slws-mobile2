@@ -1,5 +1,4 @@
 package com.slws.model;
-import android.widget.Button;
 
 import com.google.gson.annotations.SerializedName;
 
