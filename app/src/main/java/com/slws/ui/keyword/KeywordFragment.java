@@ -14,56 +14,89 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.slws.R;
-
-import java.util.ArrayList;
+import com.slws.utils.States;
 
 public class KeywordFragment extends Fragment {
-    ListView listView;
-    ArrayList<String> list = new ArrayList<>();
-    Button btnAdd;
-    Button btnDel;
-    ArrayAdapter<String> adapter;
+    Integer curPos = -1;
+    String curString = null;
+    KeywordViewModel viewModel;
+
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.fragment_keyword, container, false);
+        ListView listView = root.findViewById(R.id.listView1);
+        Button btnAdd = root.findViewById(R.id.btnAdd);
+        Button btnDel = root.findViewById(R.id.btnDel);
+        EditText editText = root.findViewById(R.id.edt1);
+
+        if (viewModel == null) {
+            viewModel = ViewModelProviders.of(this).get(KeywordViewModel.class);
+        }
+
+        listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+        ArrayAdapter<String> arrayAdapter =
+                new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_single_choice, viewModel.getItemList());
+        listView.setAdapter(arrayAdapter);
+
+        listView.setOnItemClickListener((AdapterView<?> parent, View view, int position, long id) -> {
+            curPos = position;
+        });
+
+        btnAdd.setOnClickListener((View v) -> {
+            curString = editText.getText().toString();
+            if (viewModel.itemListContatins(curString)) {
+                Toast.makeText(getActivity(),
+                        curString + "는 이미 등록된 키워드입니다.", Toast.LENGTH_SHORT).show();
+            } else if (!curString.equals("")) {
+                viewModel.addToItemList(curString);
+                arrayAdapter.notifyDataSetChanged();
+                editText.setText("");
+                Toast.makeText(getActivity(), curString + "의 키워드가 등록되었습니다!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnDel.setOnClickListener((View v) -> {
+            if (!curPos.equals(-1)) {
+                viewModel.removeFromItemList(curPos.intValue());
+                arrayAdapter.notifyDataSetChanged();
+                listView.clearChoices();
+                Toast.makeText(getActivity(), curString + "의 키워드가 삭제되었습니다!", Toast.LENGTH_SHORT).show();
+                curPos = -1;
+            }
+        });
+        return root;
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putStringArrayList(States.KEYWORD.toString(), viewModel.getItemList());
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
+    }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        if (savedInstanceState != null) {
+//            mItemList = savedInstanceState.getStringArrayList(States.KEYWORD.toString());
+//            Log.d("savedInstanceState", mItemList.toString() + savedInstanceState.toString());
+        }
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_keyword_new, container, false);
-        listView = root.findViewById(R.id.listView1);
-        btnAdd = root.findViewById(R.id.btnAdd);
-        btnDel = root.findViewById(R.id.btnDel);
-
-        adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_single_choice, list);
-        listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
-        listView.setAdapter(adapter);
-
-        listView.setOnItemClickListener((AdapterView<?> parent, View view, int position, long id) -> {
-            String item = list.get(position);
-        });
-        final EditText edt = root.findViewById(R.id.edt1);
-
-        btnAdd.setOnClickListener((View v) -> {
-            String str = edt.getText().toString();
-            list.add(str);
-            adapter.notifyDataSetChanged();
-            edt.setText("");
-            Toast.makeText(getActivity(), str + "의 키워드가 등록되었습니다!", Toast.LENGTH_SHORT).show();
-        });
-
-
-        btnDel.setOnClickListener((View v) -> {
-            int pos = listView.getCheckedItemPosition();
-            String str = list.get(pos);
-            list.remove(pos);
-            adapter.notifyDataSetChanged();
-            listView.clearChoices();
-            Toast.makeText(getActivity(), str + "의 키워드가 삭제되었습니다!", Toast.LENGTH_SHORT).show();
-        });
-        return root;
+    public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+        super.onViewStateRestored(savedInstanceState);
+        if (savedInstanceState != null) {
+//            mItemList = savedInstanceState.getStringArrayList(States.KEYWORD.toString());
+//            Log.d("savedInstanceState", mItemList.toString() + savedInstanceState.toString());
+        }
     }
 }

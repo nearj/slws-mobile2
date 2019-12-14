@@ -20,7 +20,7 @@
         android:id="@+id/navigation_keyword"
         android:name="com.slws.ui.keyword.KeywordFragment"
         android:label="@string/title_keyword"
-        tools:layout="@layout/fragment_keyword_new" />
+        tools:layout="@layout/fragment_keyword" />
 
     <fragment
         android:id="@+id/navigation_favoriteList"
