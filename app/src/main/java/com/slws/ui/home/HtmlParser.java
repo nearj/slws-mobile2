@@ -51,7 +51,7 @@ public class HtmlParser extends AsyncTask<String, Void, Boolean> {
                 String date = ie2.next().text();
                 String visited = ie2.next().text();
                 ie2.next();
-                //Content(String mTitle, String mDetails, String mDate, String mDeparture, String nNumOfURL)
+                //Content(String mTitle, String mDetail, String mDate, String mDeparture, String nNumOfURL)
                 textInfos.add(new Content(title, "", date, departure, info.split("'")[3]));
             }
         }

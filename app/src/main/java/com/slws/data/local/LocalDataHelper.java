@@ -10,6 +10,8 @@ import java.util.List;
 public interface LocalDataHelper {
     Observable<List<Content>> getAllContent();
 
-    Observable<List<Keyword>> getAllKeyword();
+    List<Keyword> getAllKeyword();
+
+
 
 }

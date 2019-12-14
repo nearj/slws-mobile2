@@ -37,7 +37,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:paddingRight="45dp"
-            android:text="@{content.mDetails}" />
+            android:text="@{content.mDetail}" />
 
         <TextView
             android:id="@+id/dashboard_menu_item_date"

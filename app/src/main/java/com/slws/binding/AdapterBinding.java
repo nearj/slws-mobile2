@@ -28,7 +28,6 @@ public class AdapterBinding {
         }
     }
 
-
     @BindingAdapter({"android:src"})
     public static void imageSrcLoader(ImageView imageView, int id) {
         imageView.setImageResource(id);

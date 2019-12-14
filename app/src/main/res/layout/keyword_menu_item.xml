@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout>
-
     <data>
-
         <variable
             name="keyword"
-            type="com.slws.data.model.Keyword" />
+            type="com.slws.model.Keyword" />
     </data>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
