@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">SLWS</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">MY LIST</string>
-    <string name="title_interest">관심공지</string>
+    <string name="title_dashboard">공지사항 목록</string>
+    <string name="title_interest">MY LIST</string>
     <string name="title_keyword">키워드</string>
     <string name="title_favorite_list">관심 공지사항 설정</string>
     <string name="checkbox">CheckBox</string>

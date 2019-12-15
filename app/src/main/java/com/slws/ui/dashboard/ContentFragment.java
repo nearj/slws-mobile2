@@ -111,7 +111,7 @@ public class ContentFragment extends Fragment {
                 date.setText(content.getDate());
                 department.setText(content.getDeparture());
                 detail.setText(content.getDetail());
-                Toast.makeText(mContext, "Test Click", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(mContext, "Test Click", Toast.LENGTH_SHORT).show();
                 dialog.show();
             });
 
