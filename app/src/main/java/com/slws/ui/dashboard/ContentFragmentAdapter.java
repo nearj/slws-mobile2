@@ -7,23 +7,27 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.slws.data.AppDataManager;
 import com.slws.databinding.DashboardMenuItemBinding;
 import com.slws.model.Content;
+import com.slws.utils.BoardTitle;
+import com.slws.utils.Spider;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ContentFragmentAdapter
         extends RecyclerView.Adapter<ContentFragmentAdapter.ContentViewHolder> {
-    private String[][] mDataset;
     private List<Content> mContentList;
+    AppDataManager appDataManager = new AppDataManager();
 
-    public ContentFragmentAdapter(String[][] dataset) {
-        mDataset = dataset;
-    }
+    public ContentFragmentAdapter(BoardTitle boardTitle) {
+        List<Integer> seqs = Spider.getSeqeunces(boardTitle, 10);
+//        Log.d(TAG, "ContentFragmentAdapter: " + seqs.size());
+//        Log.d(TAG, "ContentFragmentAdapter: "+ seqs.toArray(new Integer[seqs.size()]));
+        this.mContentList = appDataManager.
+                getContents(boardTitle, seqs.toArray(new Integer[seqs.size()]));
 
-    public ContentFragmentAdapter() {
-        this.mContentList = new ArrayList<>();
+
     }
 
     @NonNull
@@ -63,6 +67,7 @@ public class ContentFragmentAdapter
 
         void bind(Content content) {
             binding.setContent(content);
+
             binding.layout.setBackgroundColor(Color.WHITE);
         }
     }

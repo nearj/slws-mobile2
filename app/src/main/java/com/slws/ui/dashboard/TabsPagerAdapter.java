@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.slws.R;
+import com.slws.utils.BoardTitle;
 
 
 class TabsPagerAdapter extends FragmentPagerAdapter {
@@ -23,28 +23,24 @@ class TabsPagerAdapter extends FragmentPagerAdapter {
     @Override
     public int getItemPosition(@NonNull Object object) {
 
-        /*
-        if (object instanceof  UpdateableFragment) {
-            (Update)
-        }
-         */
         return super.getItemPosition(object);
     }
 
     @Override
     public Fragment getItem(int position) {
-        return new ContentFragment();
+        return ContentFragment.newInstance(BoardTitle.BOARD_TITLES.get(position));
     }
-
 
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        return mContext.getResources().getStringArray(R.array.notice_list)[position];
+        return BoardTitle.BOARD_TITLES.get(position).toString();
+//        return mContext.getResources().getStringArray(R.array.notice_list)[position];
     }
 
     @Override
     public int getCount() {
-        return mContext.getResources().getStringArray(R.array.notice_list).length;
+        return BoardTitle.BOARD_TITLES.size();
+//        return mContext.getResources().getStringArray(R.array.notice_list).length;
     }
 }

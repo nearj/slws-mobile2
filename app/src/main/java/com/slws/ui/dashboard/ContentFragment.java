@@ -14,22 +14,25 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.slws.R;
-import com.slws.data.AppDataManager;
 import com.slws.databinding.DashboardFragmentRecyclerBinding;
 import com.slws.model.Content;
 import com.slws.utils.BoardTitle;
 
 public class ContentFragment extends Fragment {
-    private ContentViewModel mViewModel;
+
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private String[][] mDataset;
     private ObservableArrayList<Content> contentList;
-    AppDataManager appDataManager = new AppDataManager();
+    private BoardTitle mBoardTitle;
 
-    public static ContentFragment newInstance() {
-        return new ContentFragment();
+
+    private ContentFragment(BoardTitle boardTitle) {
+        this.mBoardTitle = boardTitle;
+    }
+
+    public static ContentFragment newInstance(BoardTitle boardTitle) {
+        return new ContentFragment(boardTitle);
     }
 
     @Override
@@ -43,14 +46,11 @@ public class ContentFragment extends Fragment {
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
-
-
-        //crawling();
-        mAdapter = new ContentFragmentAdapter();
-        contentList = new ObservableArrayList<>();
+        mAdapter = new ContentFragmentAdapter(mBoardTitle);
+//        contentList = new ObservableArrayList<>();
         binding.dashboardRecyclerView.setHasFixedSize(true);
         binding.dashboardRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        binding.setContentList(this.contentList);
+//        binding.setContentList(this.contentList);
         binding.dashboardRecyclerView.setAdapter(mAdapter);
 
         return root;
@@ -58,8 +58,5 @@ public class ContentFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-//        mViewModel = ViewModelProviders.of(this).get(ContentViewModel.class);
     }
-
-
 }

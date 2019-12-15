@@ -26,10 +26,13 @@ public class CrawlerServiceUtil extends AsyncTask<Integer, Void, List<Content>> 
     @Override
     protected List<Content> doInBackground(Integer... integers) {
         for (Integer i : integers) {
-            mURL += i + "&epTicket=LOG";
 
             try {
-                doc = Jsoup.connect(mURL).get();
+                if (i.intValue() == 3)
+                    doc = Jsoup.connect(mURL + i +
+                            "&sort=1&pageIndex=1&searchCnd=&searchWrd=&viewAuth=Y&lpageCount=10&epTicket=LOG").get();
+                else
+                    doc = Jsoup.connect(mURL + i + "&epTicket=LOG").get();
 
                 Elements element = doc.select("ul.listType.view li");
                 Iterator<Element> ie1 = element.select("span").iterator();
@@ -50,6 +53,7 @@ public class CrawlerServiceUtil extends AsyncTask<Integer, Void, List<Content>> 
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
             contentList.add(new Content(title, author, departure, date, detailString));
         }
         return contentList;

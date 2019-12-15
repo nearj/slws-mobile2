@@ -18,14 +18,14 @@
     <string name="add_button">등록하기</string>
     <string name="finish_add_notice_list">관심 공지사항 목록이 등록되었습니다.</string>
 
-    <string-array name="notice_list">
-        <item>일반공지</item>
-        <item>학사공지</item>
-        <item>직원채용</item>
-        <item>창업공지</item>
-        <item>입찰공고</item>
-        <item>시설공사</item>
-        <item>행사안내</item>
-        <item>비교과교육</item>
-    </string-array>
+    <!--    <string-array name="notice_list">-->
+    <!--        <item>일반공지</item>-->
+    <!--        <item>학사공지</item>-->
+    <!--        <item>직원채용</item>-->
+    <!--        <item>창업공지</item>-->
+    <!--        <item>입찰공고</item>-->
+    <!--        <item>시설공사</item>-->
+    <!--        <item>행사안내</item>-->
+    <!--        <item>비교과교육</item>-->
+    <!--    </string-array>-->
 </resources>
