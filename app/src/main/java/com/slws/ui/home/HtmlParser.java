@@ -31,9 +31,9 @@ public class HtmlParser extends AsyncTask<String, Void, Boolean> {
         }
         Elements element = doc.select("ul.listType li");
 
-        Iterator<Element> ie1 = element.select("a").iterator();
+        Iterator<Element> ie1 = element.select("InterestContentFragmentAdapter").iterator();
         Iterator<Element> ie2 = element.select("ul li").iterator();
-        Iterator<Element> ie3 = element.select("a span.mhide").iterator();
+        Iterator<Element> ie3 = element.select("InterestContentFragmentAdapter span.mhide").iterator();
 
         String title = "";
         while (ie1.hasNext()) {

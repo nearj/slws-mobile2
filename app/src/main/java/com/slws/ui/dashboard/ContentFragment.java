@@ -1,5 +1,6 @@
 package com.slws.ui.dashboard;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,9 +15,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.slws.R;
+import com.slws.data.AppDataManager;
 import com.slws.databinding.DashboardFragmentRecyclerBinding;
+import com.slws.databinding.DashboardMenuItemBinding;
 import com.slws.model.Content;
 import com.slws.utils.BoardTitle;
+import com.slws.utils.Spider;
+
+import java.util.List;
 
 public class ContentFragment extends Fragment {
 
@@ -27,7 +33,7 @@ public class ContentFragment extends Fragment {
     private BoardTitle mBoardTitle;
 
 
-    private ContentFragment(BoardTitle boardTitle) {
+    public ContentFragment(BoardTitle boardTitle) {
         this.mBoardTitle = boardTitle;
     }
 
@@ -47,10 +53,8 @@ public class ContentFragment extends Fragment {
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
         mAdapter = new ContentFragmentAdapter(mBoardTitle);
-//        contentList = new ObservableArrayList<>();
         binding.dashboardRecyclerView.setHasFixedSize(true);
         binding.dashboardRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-//        binding.setContentList(this.contentList);
         binding.dashboardRecyclerView.setAdapter(mAdapter);
 
         return root;
@@ -58,5 +62,59 @@ public class ContentFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+    }
+
+    public static class ContentFragmentAdapter
+            extends RecyclerView.Adapter<ContentFragmentAdapter.ContentViewHolder> {
+        AppDataManager appDataManager = new AppDataManager();
+        private List<Content> mContentList;
+
+        public ContentFragmentAdapter(BoardTitle boardTitle) {
+            List<Integer> seqs = Spider.getSeqeunces(boardTitle, 10);
+            this.mContentList = AppDataManager.
+                    getContents(boardTitle, seqs.toArray(new Integer[seqs.size()]));
+        }
+
+        @NonNull
+        @Override
+        public ContentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            DashboardMenuItemBinding binding = DashboardMenuItemBinding.inflate(
+                    LayoutInflater.from(parent.getContext()), parent, false);
+            return new ContentViewHolder(binding);
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull ContentViewHolder holder, int position) {
+            Content content = mContentList.get(position);
+            holder.bind(content);
+        }
+
+        public void setItem(List<Content> contentList) {
+            if (contentList == null) {
+                return;
+            }
+            this.mContentList = contentList;
+            notifyDataSetChanged();
+        }
+
+        @Override
+        public int getItemCount() {
+            return mContentList.size();
+        }
+
+        public static class ContentViewHolder extends RecyclerView.ViewHolder {
+            private final DashboardMenuItemBinding binding;
+
+            public ContentViewHolder(DashboardMenuItemBinding binding) {
+                super(binding.getRoot());
+                this.binding = binding;
+            }
+
+            void bind(Content content) {
+                binding.setContent(content);
+
+                binding.layout.setBackgroundColor(Color.WHITE);
+            }
+        }
     }
 }

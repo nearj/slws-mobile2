@@ -22,7 +22,7 @@
         android:title="@string/title_favorite_list" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_interest"
         android:icon="@drawable/ic_thumb_up_black_24dp"
         android:title="@string/title_interest" />
 </menu>

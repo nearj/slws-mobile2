@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.dashboard.DashboardActivity"
+            android:name=".ui.dashboard.DashboardFragment"
             android:theme="@style/DashboardTheme">
 
         </activity>

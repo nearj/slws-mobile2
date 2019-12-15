@@ -1,51 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
         <variable
-            name="content"
+            name="contentInterest"
             type="com.slws.model.Content" />
     </data>
 
     <RelativeLayout
-        android:id="@+id/layout"
+        android:id="@+id/layout_interest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp">
 
         <TextView
-            android:id="@+id/dashboard_menu_item_title"
+            android:id="@+id/interest_menu_item_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:paddingRight="80dp"
-            android:text="@{content.mTitle}"
+            android:text="@{contentInterest.mTitle}"
             android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/dashboard_menu_item_detail"
+            android:id="@+id/interest_menu_item_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/dashboard_menu_item_title"
+            android:layout_below="@+id/interest_menu_item_title"
             android:layout_marginTop="5dp"
             android:ellipsize="end"
             android:maxLines="1"
             android:paddingRight="45dp"
-            android:text="@{content.mDetail}" />
+            android:text="@{contentInterest.mDetail}" />
         <!--            android:layout_marginStart="10dp"-->
         <!--            android:layout_marginLeft="10dp"-->
 
-        <TextView
-            android:id="@+id/dashboard_menu_item_date"
+
+        <Switch
+            android:id="@+id/switch1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@id/dashboard_menu_item_title"
+            android:layout_alignBaseline="@id/interest_menu_item_title"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:text="@{content.mDate}" />
+            android:checked="@{contentInterest.mDone}" />
+
     </RelativeLayout>
 </layout>
