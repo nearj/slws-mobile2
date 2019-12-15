@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.slws.model.Content;
 import com.slws.ui.dashboard.ContentFragment;
-import com.slws.ui.interests.InterestContentFragmentAdapter;
+import com.slws.ui.interests.InterestContentFragment;
 
 import java.lang.reflect.Constructor;
 
@@ -31,7 +31,7 @@ public class AdapterBinding {
 
     @BindingAdapter("bind:itemi")
     public static void bindItemi(RecyclerView recyclerView, ObservableArrayList<Content> contentListInterest) {
-        InterestContentFragmentAdapter adapter = (InterestContentFragmentAdapter) recyclerView.getAdapter();
+        InterestContentFragment.InterestContentFragmentAdapter adapter = (InterestContentFragment.InterestContentFragmentAdapter) recyclerView.getAdapter();
         if (adapter != null) {
             adapter.setItem(contentListInterest);
         }

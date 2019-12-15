@@ -28,15 +28,5 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navView, navController);
     }
 
-//    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        switch (item.getItemId()) {
-//            case R.id.navigation_dashboard:
-//                Intent i = new Intent(MainActivity.this, DashboardFragment.class);
-//                MainActivity.this.startActivity(i);
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
-
 
 }

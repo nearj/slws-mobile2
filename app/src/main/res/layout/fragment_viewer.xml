@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="content"
+            type="com.slws.model.Content" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/content_viewer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/content_viewer_Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="80dp"
+            android:text="agdsg"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <!--            android:text="@{content.mTitle}"-->
+
+
+        <TextView
+            android:id="@+id/content_viewer_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/content_viewer_Title"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="date"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/content_viewer_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/content_viewer_Title"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="author"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/content_viewer_department"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/content_viewer_author"
+            android:text="department"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/content_viewer_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/content_viewer_department"
+
+            android:text="detail"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</layout>

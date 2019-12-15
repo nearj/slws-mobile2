@@ -24,7 +24,7 @@
                 android:id="@+id/dashboard_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:clickable="false"
+                android:clickable="true"
                 android:paddingBottom="30dp"
                 android:scrollbars="vertical"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
